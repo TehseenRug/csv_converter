@@ -9,3 +9,7 @@ app = Flask(__name__)
 def get_books_from_csv():
     csv_service = CSVService()
     return csv_service.get_books_from_csv()
+
+
+if __name__ == '__main__':
+    app.run(threaded=False)

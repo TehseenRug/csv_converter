@@ -2,9 +2,9 @@ from unittest import TestCase
 from unittest.mock import patch
 
 from src.main.book import Book
-from src.main.controller import *
 
-class TestGetBooksFromCSV(TestCase):
+
+class TestController(TestCase):
 
     allBooks = []
     book1 = None
