@@ -11,6 +11,7 @@ class CSVRetriever:
         data_of_given_row = []
 
         self.handle_all_rows(count_row, data_frame, data_of_given_row)
+        print(self.books_from_csv)
         return self.books_from_csv
 
     def handle_all_rows(self, count_row, data_frame, data_of_given_row):
@@ -19,7 +20,7 @@ class CSVRetriever:
             data_of_given_row = []
 
     def retrieve_book_in_row(self, current_row, data_frame, data_of_given_row):
-        for current_attribute in range(0, len(self.bookAttributes) - 1):
+        for current_attribute in range(0, len(self.bookAttributes)):
             data_of_given_row.append(data_frame.at[current_row, self.bookAttributes[current_attribute]])
         self.books_from_csv.append(data_of_given_row)
 
