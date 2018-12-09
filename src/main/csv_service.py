@@ -1,5 +1,6 @@
 from src.main.author import Author
 from src.main.book import Book
+from src.main.books import Books
 from src.main.csv_retriever import CSVRetriever
 from src.main.genre import Genre
 from src.main.title import Title
@@ -17,19 +18,21 @@ INDEX_OF_APPEARANCE_YEAR = 6
 class CSVService:
 
     all_books = []
-    all_books_as_dtos = []
 
     def __init__(self):
         self.csv_retriever = CSVRetriever()
 
     def get_books_from_csv(self):
+        books = Books()
+        all_books_as_dtos = []
 
         books_from_csv = self.csv_retriever.retrieve()
-        for current_book in range (0, len(books_from_csv)):
+        for current_book in range(0, len(books_from_csv)):
             book = self.setup_book(books_from_csv, current_book)
-            print(book)
-            self.all_books_as_dtos.append(book)
-        return self.all_books_as_dtos
+            all_books_as_dtos.append(book)
+
+        books.allBooks = all_books_as_dtos
+        return books
 
     def setup_book(self, books_from_csv, current_book):
         book = Book()
