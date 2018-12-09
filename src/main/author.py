@@ -1,0 +1,4 @@
+class Author:
+
+    firstName = ''
+    lastName = ''

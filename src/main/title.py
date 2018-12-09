@@ -1,0 +1,4 @@
+class Title:
+
+    mainTitle = ''
+    subTitle = ''
