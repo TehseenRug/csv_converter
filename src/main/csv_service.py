@@ -6,6 +6,7 @@ class CSVService:
     def __init__(self):
         self.csv_retriever = CSVRetriever()
 
+    # after retriever all data, the data still needs to be converted to json
+
     def get_books_from_csv(self):
-        self.csv_retriever.retrieve()
-        return []
+        return self.csv_retriever.retrieve()
