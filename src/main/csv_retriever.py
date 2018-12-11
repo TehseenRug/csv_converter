@@ -11,7 +11,6 @@ class CSVRetriever:
         data_of_given_row = []
 
         self.handle_all_rows(count_row, data_frame, data_of_given_row)
-        print(self.books_from_csv)
         return self.books_from_csv
 
     def handle_all_rows(self, count_row, data_frame, data_of_given_row):

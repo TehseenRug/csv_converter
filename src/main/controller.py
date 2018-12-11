@@ -1,16 +1,15 @@
-from flask import Flask
+from flask import Flask, json
 
 from src.main.csv_service import CSVService
 
 app = Flask(__name__)
 
-# here we probably should return a json string containing all books as dtos
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def get_books_from_csv():
     csv_service = CSVService()
-    result = csv_service.get_books_from_csv()
-    return result
+    books = csv_service.get_books_from_csv()
+    return json.dumps(books, default=lambda x: x.__dict__)
 
 
 if __name__ == '__main__':
