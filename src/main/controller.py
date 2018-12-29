@@ -5,7 +5,7 @@ from src.main.csv_service import CSVService
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def get_books_from_csv():
     csv_service = CSVService()
     books = csv_service.get_books_from_csv()
