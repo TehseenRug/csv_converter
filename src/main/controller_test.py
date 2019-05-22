@@ -1,6 +1,5 @@
 from flask import Flask
 
-csv_service = CSVService()
 app = Flask(__name__)
 
 @app.route('/')
